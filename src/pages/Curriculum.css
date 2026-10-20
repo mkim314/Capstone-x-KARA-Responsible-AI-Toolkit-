@@ -1,0 +1,33 @@
+.rat-curriculum { background: #fffdf8; color: #17261c; padding: 80px 0; }
+.rat-wrap { max-width: 1180px; width: calc(100% - 40px); margin: auto; }
+.rat-eyebrow { color: #637b65; font: 700 12px/1.4 Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.rat-curriculum h2, .rat-curriculum h3, .rat-curriculum h4 { font-family: Georgia, serif; color: #0f1a14; }
+.rat-curriculum h2 { font-size: clamp(32px, 4vw, 52px); margin: 6px 0 14px; }
+.rat-intro { color: #576159; max-width: 740px; font-size: 18px; line-height: 1.65; }
+.rat-layout-picker { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 18px 0 28px; font: 600 14px Arial, sans-serif; }
+.rat-layout-picker button { background: white; border: 1px solid #cbd3ca; color: #23382a; border-radius: 4px; padding: 11px 16px; cursor: pointer; }
+.rat-layout-picker button[aria-pressed="true"] { background: #23382a; color: white; border-color: #23382a; }
+.rat-sidebar-layout { display: grid; grid-template-columns: 265px minmax(0, 1fr); gap: 34px; align-items: start; }
+.rat-sidebar { border: 1px solid #dbe0d8; border-radius: 4px; padding: 20px 14px; background: #f6f3ea; }
+.rat-sidebar h3 { font-size: 23px; padding: 0 12px 12px; margin: 0; }
+.rat-category-button { display: flex; width: 100%; flex-direction: column; text-align: left; gap: 3px; border: 0; border-radius: 4px; background: transparent; padding: 13px 12px; color: #17261c; font: 700 15px Arial, sans-serif; cursor: pointer; }
+.rat-category-button small { font: 400 12px Arial, sans-serif; color: #667168; }
+.rat-category-button:hover, .rat-category-button.active { background: #dfe7dd; }
+.rat-content { min-width: 0; }
+.rat-content h3 { font-size: clamp(29px, 3.5vw, 42px); margin: 2px 0 8px; }
+.rat-group-count { color: #68716a; margin: 0 0 22px; }
+.rat-topic-list { border-top: 1px solid #dbe0d8; }
+.rat-topic { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 20px; padding: 22px 0; border-bottom: 1px solid #dbe0d8; }
+.rat-unit { display: inline-flex; align-items: center; justify-content: center; justify-self: start; padding: 8px 12px; min-width: 55px; height: 43px; background: #dfe7dd; border-radius: 4px; font: bold 16px Georgia, serif; }
+.rat-topic h4 { margin: 0 0 6px; font-size: 20px; line-height: 1.25; }
+.rat-topic p { font-size: 15px; color: #576159; line-height: 1.6; margin: 0 0 8px; }
+.rat-lesson-status { font: 700 12px Arial, sans-serif; color: #667b66; }
+.rat-accordion { display: grid; gap: 14px; }
+.rat-accordion-group { border: 1px solid #d4dcd1; border-radius: 5px; overflow: hidden; background: #f6f8f3; }
+.rat-accordion-group h3 { margin: 0; }
+.rat-accordion-group h3 button { display: flex; align-items: center; gap: 15px; width: 100%; padding: 24px 27px; background: transparent; border: 0; text-align: left; color: #17261c; cursor: pointer; }
+.rat-accordion-heading { font: bold 25px Georgia, serif; flex: 1; }
+.rat-accordion-meta { font: 600 13px Arial, sans-serif; color: #4c6550; }
+.rat-accordion-body { background: #fffdf8; border-top: 1px solid #d4dcd1; padding: 0 28px; }
+@media (max-width: 720px) { .rat-sidebar-layout { grid-template-columns: 1fr; gap: 20px; } .rat-sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; } .rat-sidebar h3 { grid-column: 1 / -1; } .rat-topic { grid-template-columns: 60px minmax(0, 1fr); gap: 14px; } .rat-accordion-group h3 button { padding: 19px 15px; } .rat-accordion-heading { font-size: 21px; } .rat-accordion-body { padding: 0 15px; } }
+@media (max-width: 460px) { .rat-sidebar { grid-template-columns: 1fr; } .rat-accordion-meta { display: none; } }
