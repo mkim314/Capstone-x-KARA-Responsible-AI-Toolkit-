@@ -14,8 +14,8 @@ function Home() {
             intelligence responsibly.
           </p>
 
-          <Link to="/curriculum" className="button">
-            Explore the Curriculum
+          <Link to="/" className="button">
+            Take the Quiz
           </Link>
         </div>
       </section>
