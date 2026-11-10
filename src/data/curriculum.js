@@ -5,7 +5,7 @@ export const curriculum = [
     slug: "start-here",
     topics: [
       {
-        unit: "B7 (revised)",
+        unit: "B7",
         title: "Responsible Use Basics",
         slug: "B7",
         description:
@@ -17,19 +17,11 @@ export const curriculum = [
           },
           {
             heading: "Verified content only",
-            body: "Never ship AI-generated content without human review. Mark AI-drafted vs. human-confirmed visibly so the trace does not get lost when the document passes through multiple hands. (Edit): When verifying AI-generated content, the human should have an understanding of the material enough to be able to spot any mistakes with the output. Confirm numbers, dates, and sources are valid.",
-          },
-          {
-            heading: "Disclose use of AI (new)",
-            body: "Document where AI was used, whether it be in emails, coursework, or published materials.",
+            body: "Never ship AI-generated content without human review. Mark AI-drafted vs. human-confirmed visibly so the trace does not get lost when the document passes through multiple hands. When verifying AI generated content, you should know the material enough to where you can tell whether the output has a mistake in it. If you aren’t able to tell if the output is correct, it’s not ready to ship. Confirm numbers, dates, and sources are valid. Also, it is important to disclose where AI was used, whether it be in emails, coursework, or published materials. For KARA specifically, any sort of data or figures should have a traceable federal source.",
           },
           {
             heading: "Care with sensitive or vulnerable contexts",
-            body: "Student data, mental health, legal contexts, and other high-stakes situations need extra caution. When in doubt, do not send the content to the model at all.",
-          },
-           {
-            heading: "Strip identifying details (new)",
-            body: "Instead of pasting sensitive information, strip the identifying details so the model can still be used without violating privacy. An example is changing student names to Student A, B, etc.",
+            body: "Student data, mental health, legal contexts, and other high-stakes situations need extra caution. When in doubt, do not send the content to the model at all. For lower risk material, instead of pasting sensitive information, strip the identifying details so the model can still be used without reducing the risk of a breach of privacy. An example is changing employee names or meeting transcript to bracket notation such as [employee’s name], [meeting transcript].",
           },
         ],
       },
@@ -142,11 +134,11 @@ export const curriculum = [
         sections: [
           {
             heading: "What goes in a handoff prompt",
-            body: "Full context (what came before), the tasks (specific and ordered), voice notes (how the output should sound), human-confirmation checkpoints (where the person picks up before Claude proceeds), and the model + settings named up front (which Claude model to use, extended thinking on or off, etc.).",
+            body: "Full context (what came before), the tasks (specific and ordered), voice notes (how the output should sound), human-confirmation checkpoints (where the person picks up before Claude proceeds), and the model + settings named up front (which Claude model to use, using a higher or lower effort value, etc.).",
           },
           {
             heading: "Underspecified vs. complete",
-            body: "Underspecified: 'Have Claude help you draft the report.' Complete: 'Paste this into a fresh Claude Opus chat with extended thinking on. Read the attached brief. Draft Sections 1 and 2. Stop and show me before Section 3. Voice: keep it clinical, no marketing language.' The second one runs without a follow-up email.",
+            body: "Underspecified: 'Have Claude help you draft the report.' Complete: 'Paste this into a fresh Claude Opus chat with effort level set to “high”. Read the attached brief. Draft Sections 1 and 2. Stop and show me before Section 3. Voice: keep it clinical, no marketing language.' The second one runs without a follow-up email.",
           },
         ],
       },
@@ -168,15 +160,15 @@ export const curriculum = [
         ],
       },
       {
-        unit: "B8 (new)",
-        title: "Picking the right model / settings",
+        unit: "B8",
+        title: "Picking the Right Model and Settings",
         slug: "B8",
         description:
           "Claude has a variety of different models. It is important to select the right one for each task.",
         sections: [
           {
             heading: "Haiku 5.5",
-            body: "This model is best used for simple tasks, such as looking up information, reads or writes, formatting, and quick chat replies. Can be used as a first pass for different tasks, and then if the output is determined to be not up to standard, Sonnet can be used instead. Haiku is typically used as the cheapest per finished task, but this may not be true if the model is struggling to find an answer.",
+            body: "This model is best used for simple tasks, such as looking up information, simple reads or writes of text, formatting, and quick chat replies. Can be used as a first pass for different tasks, and then if the output is determined to be not up to standard, Sonnet can be used instead. Haiku is typically used as the cheapest per finished task, but this may not be true if the model is struggling to find an answer.",
           },
           {
             heading: "Sonnet 5.5",
@@ -187,29 +179,37 @@ export const curriculum = [
             body: "Used for even more complex tasks. Whenever you’re working with Sonnet and it gets confused, it is recommended to switch to Opus. It is used for more complex analysis, such as solving a problem in a large, multi-file codebase.",
           },
           {
+            heading: "Fable 5.1",
+            body: "Sits above Opus in terms of complexity. Used for only the most complex of tasks.",
+          },
+          {
             heading: "Effort",
-            body: "Each of the Claude models allows you to pick an “effort” value, those being Low, Medium, High, Extra, and Max. These affect how much thinking the model does, with lower effort producing a faster, cheaper response while a higher effort produces a more thorough response.",
+            body: "Each of the Claude models allows you to pick an “effort” value, those being Low, Medium, High, Extra, and Max. These affect how much thinking the model does, with lower effort producing a faster, cheaper response while a higher effort produces a more thorough response. However, typically the default will work just fine for most tasks.",
+          },
+          {
+            heading: "What to pick",
+            body: "Sonnet should most likely be what you start with, potentially moving up in complexity if Claude messes up. It is important to keep in mind, however, that a higher effort model won’t fix a vague/sloppy prompt.",
           },
         ],
       },
       {
-        unit: "B9 (new)",
-        title: "Spotting Bias / Missing Voice",
+        unit: "B9",
+        title: "Spotting Bias and Missing Voices",
         slug: "B9",
         description:
-          "Output of Claude should be fine tuned to avoid stereotypes or a general audience that does not apply to the context of KARA.",
+          "Check Claude’s output for stereotypes and for an imagined reader who does not match the families KARA serves.",
          sections: [
           {
             heading: "Leaning on stereotypes",
-            body: "Claude, being an LLM, may be influenced by stereotypes of different groups. Pay attention and try and notice if this comes up in any of its outputs.",
+            body: "Claude, having learned from human writing, may be influenced by stereotypes of different groups. Ask yourself (or Claude) who exactly the imagined reader is and if any unrealistic assumptions are being made regarding what resources they have.",
           },
           {
             heading: "Assuming general audience",
-            body: "Preferably Claude should not assume the context of a task only applies to a general audience. It is important to make sure that Claude is aware that the output should apply to KARA’s mission of child welfare.",
+            body: "Preferably Claude should not assume the context of a task only applies to a general audience. It is important to make sure that Claude is aware that the output should apply to KARA’s mission of child welfare. Outline who exactly the audience is when prompting Claude.",
           },
           {
             heading: "Resource Guide Example",
-            body: "Not every family is going to have access to reliable internet, a car, or maybe even a place to live. A resource guide that assumes a family has access to these would be less useful.",
+            body: "Not every family is going to have access to reliable internet, a car, or maybe even a place to live. A resource guide that assumes a family has access to these would be less useful. A way to mitigate this is to prompt, “List every assumption this draft makes about the family reading it, including transportation, internet, housing, language, and income. Then revise it so it works for a family with none of those.”",
           },
         ],
       },
