@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { questions } from "../data/quiz";
 
 function Home() {
   return (
@@ -14,9 +15,12 @@ function Home() {
             intelligence responsibly.
           </p>
 
-          <Link to="/" className="button">
-            Take the Quiz
+          <Link to="/quiz" className="button">
+            Let’s Get Started →
           </Link>
+          <p className="hero-button-note">
+            Answer {questions.length} questions to see your recommended units
+          </p>
         </div>
       </section>
 

@@ -36,12 +36,12 @@ export const curriculum = [
     ],
   },
   {
-    title: "Using my own work",
+    title: "Using My Own Work",
     slug: "using-my-own-work",
     topics: [
       {
         unit: "B2",
-        title: "Turn Your Own Documents Into A Quick Interactive App",
+        title: "Turn Your Documents into a Quick App",
         slug: "B2",
         description:
           "The thirty-minute pattern. A knowledge base you already maintain becomes a small interactive app you can send anyone, instead of a twenty-page document.",
@@ -62,7 +62,7 @@ export const curriculum = [
       },
       {
         unit: "B3",
-        title: "Meetings And Transcripts",
+        title: "Meetings and Transcripts",
         slug: "B3",
         description:
           "One process family, four parts. Assignment emails in your voice, decisions notes across transcripts, transcript-as-spec builds, and the shared working-session format.",
@@ -87,7 +87,7 @@ export const curriculum = [
       },
       {
         unit: "B6",
-        title: "Teach Claude Your Own Tone With Your Own Writing",
+        title: "Teach Claude Your Own Tone",
         slug: "B6",
         description:
           "Use writing you have already invested effort in - emails you spent time on, written work you submitted - as tone-training examples for your Claude account so outputs sound like you.",
@@ -114,7 +114,7 @@ export const curriculum = [
     topics: [
       {
         unit: "B1",
-        title: "Getting Claude To Ask Questions At The Right Time",
+        title: "Get Claude to Ask Questions at the Right Time",
         slug: "B1",
         description:
           "One process with three parts. For real deliverables, require all clarifying questions up front. For quick tasks, one question maximum. No lazy confirmations.",
@@ -135,7 +135,7 @@ export const curriculum = [
       },
       {
         unit: "B4",
-        title: "Handing Work To Someone Else With A Complete Prompt",
+        title: "Hand Off Work with a Complete Prompt",
         slug: "B4",
         description:
           "Writing one self-contained prompt another person pastes into a fresh chat and executes without re-explanation. Full context, tasks, voice notes, human-confirmation checkpoints, and model + settings named up front.",
@@ -169,7 +169,7 @@ export const curriculum = [
       },
       {
         unit: "B8 (new)",
-        title: "Picking the right model / settings",
+        title: "Pick the Right Model and Settings",
         slug: "B8",
         description:
           "Claude has a variety of different models. It is important to select the right one for each task.",
@@ -194,7 +194,7 @@ export const curriculum = [
       },
       {
         unit: "B9 (new)",
-        title: "Spotting Bias / Missing Voice",
+        title: "Spot Bias and Missing Voices",
         slug: "B9",
         description:
           "Output of Claude should be fine tuned to avoid stereotypes or a general audience that does not apply to the context of KARA.",
