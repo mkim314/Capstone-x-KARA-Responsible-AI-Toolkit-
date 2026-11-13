@@ -8,7 +8,7 @@ This repo contains the deliverables of the Responsible AI Toolkit developed for 
 # Source Code
 The website was developed using the React framework, built with Node.js, and bootstrapped by Vite. To install Node.js in your editor/environment, please visit https://nodejs.org/en/download.
 
-The current build is what you see here. Once downloaded, traverse to the parent folder and use `npm run dev` in your terminal to see the current build.
+All source code is available here. Once downloaded, traverse to the parent folder and use `npm run dev` in your terminal to see the current build.
 The website prototype is also deployed at [link to be added].
 
 # White Paper
