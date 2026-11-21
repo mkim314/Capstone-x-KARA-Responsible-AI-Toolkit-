@@ -1,0 +1,609 @@
+/* Light/dark pattern partially taken from https://dev.to/web_dev-usman/building-a-smooth-darklight-mode-switch-with-modern-css-features-3jlc */
+
+:root {
+  font-family: Montserrat, sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --bg-color: #ffffff;
+  --bg-color-alternate: #f6f6f3;
+
+  --text-color: #222222;
+  --text-color-alternate: #555555;
+
+  --border-color: #cccccc;
+
+  --btn-bg-color: #222222;
+  --btn-txt-color: #ffffff;
+  --btn-bg-color-alternate: #aeaeae;
+
+  --label-bg-color: #f4f0e8;
+  --hero-bg-color: #dfe7dd;
+  --principle-card-bg-color: #ffffff;
+  --carousel-card-bg-color: #f6f6f3;
+
+  --toggle-bg: #222222;
+  --toggle-circle: #ffffff;
+}
+
+:has(#dark-mode-toggle:checked) {
+  --bg-color: #0B1A1A;
+  --bg-color-alternate: #102525;
+
+  --text-color: #E8F0EE;
+  --text-color-alternate: rgb(214, 214, 214);
+
+  --border-color: #2A4A47;
+
+  --btn-bg-color: #ffffff;
+  --btn-txt-color: #222222;
+  --btn-bg-color-alternate: #3a3a3a;
+
+  --label-bg-color: #222222;
+  --hero-bg-color: #0F3B3B;
+  --principle-card-bg-color: #0B1A1A;
+  --carousel-card-bg-color: #102525;
+
+  --toggle-bg: #ffffff;
+  --toggle-circle: #222222;
+}
+
+:has(#dark-mode-toggle:checked) .img-light-mode {
+  opacity: 0;
+}
+
+:has(#dark-mode-toggle:checked) .img-dark-mode {
+  opacity: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* HEADER */
+
+.site-header {
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
+  transition: background 0.3s, border 0.3s;
+}
+
+.organization-label {
+  background-color: var(--label-bg-color);
+  color: var(--text-color);
+
+  padding: 10px 7%;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: background 0.3s;
+}
+
+.navbar {
+  min-height: 85px;
+  padding: 0 7%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 30px;
+}
+
+.site-title {
+  color: var(--text-color);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  color: var(--text-color);
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.logo img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  transition: opacity 0.3s;
+}
+
+/* Set defaults for logo to show */
+
+.img-light-mode {
+  opacity: 1;
+}
+
+.img-dark-mode {
+  opacity: 0;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 580px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 90px 7%;
+
+  background-color: var(--hero-bg-color);
+  transition: background 0.3s;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.hero h1,
+.page-hero h1 {
+  margin: 10px 0 25px;
+  
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 1.00;
+  letter-spacing: -3px;
+
+  color: var(--text-color)
+}
+
+.eyebrow {
+  color: var(--text-color);
+  margin-bottom: 15px;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero-description {
+  color: var(--text-color);
+  max-width: 700px;
+
+  margin-bottom: 35px;
+
+  font-size: 1.25rem;
+  line-height: 1.7;
+}
+
+/* BUTTONS */
+
+.button {
+  display: inline-block;
+
+  padding: 15px 25px;
+
+  background-color: var(--btn-bg-color);
+  color: var(--btn-txt-color);
+
+  border: none;
+  border-radius: 6px;
+
+  font-family: Montserrat;
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.85;
+}
+
+.secondary-button {
+  margin-top: 15px;
+}
+
+/* DARK MODE HANDLING */
+
+/* Hidden dark mode checkbox */
+#dark-mode-toggle {
+  display: none;
+}
+
+/* Toggle design pattern taken from as listed above */
+
+.toggle {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background: var(--toggle-bg);
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background: var(--toggle-circle);
+  border-radius: 50%;
+  transition: transform 0.3s, background 0.3s;
+}
+
+#dark-mode-toggle:checked + .toggle::before {
+  transform: translateX(30px);
+}
+
+.theme-toggle-button{
+  display: inline-block;
+
+  padding: 5px 25px;
+
+  background-color: var(--btn-bg-color);
+  color: var(--btn-txt-color);
+
+  border: none;
+  border-radius: 6px;
+
+  font-family: Montserrat;
+  font-size: 0.80rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.theme-toggle-button:hover {
+  opacity: 0.85;
+}
+
+/* Gray line under the homepage button */
+.hero-button-note {
+  margin: 12px 0 0;
+  color: var(--text-color-alternate);
+}
+
+/* GENERAL SECTIONS */
+
+.content-section {
+  padding: 100px 7%;
+}
+
+.content-section.alternate {
+  background-color: var(--bg-color-alternate);
+}
+
+.section-container {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  color: var(--text-color);
+}
+
+.content-section h2 {
+  margin-top: 0;
+
+  font-size: clamp(2rem, 4vw, 3.5rem);
+
+  letter-spacing: -1px;
+
+  color: var(--text-color);
+}
+
+.section-description {
+  max-width: 800px;
+
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+/* HOME CARDS */
+
+.card-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 25px;
+
+  margin-top: 50px;
+}
+
+.feature-card {
+  min-height: 300px;
+
+  padding: 40px;
+
+  border: 1px solid var(--border-color);
+
+  background-color: var(--bg-color);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feature-card h3 {
+  margin: 0;
+
+  font-size: 2rem;
+}
+
+.feature-card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.text-link {
+  font-weight: 700;
+}
+
+/* PAGE HERO */
+
+.page-hero {
+  padding: 100px 7%;
+
+  background-color: var(--hero-bg-color);
+  transition: background 0.3s;
+}
+
+/* CURRICULUM */
+
+.module-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 25px;
+}
+
+.module-card {
+  padding: 45px;
+
+  border-top: 1px solid #aaaaaa;
+}
+
+.module-card h2 {
+  font-size: 2rem;
+}
+
+.module-card p {
+  max-width: 750px;
+
+  line-height: 1.7;
+}
+
+.module-number {
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* PRINCIPLES */
+.principles-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 25px;
+}
+
+.principle-card {
+  min-height: 300px;
+
+  padding: 40px;
+
+  background-color: var(--principle-card-bg-color);
+
+  border-radius: 12px;
+
+  border: 1px solid var(--border-color);
+}
+
+.principle-card h2 {
+  font-size: 2rem;
+}
+
+.principle-card p {
+  line-height: 1.7;
+}
+
+.principle-number {
+  display: block;
+
+  margin-bottom: 50px;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+/* Carousel */
+/* Partially taken from Geeks for Geeks, https://www.geeksforgeeks.org/reactjs/building-a-carousel-component-with-react-hooks/ */
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+.carousel-container h2 {
+  font-size: 2rem;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: none;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-slide.active-slide {
+    display: block;
+    opacity: 1;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 30%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.carousel-card {
+    display: none;
+    transition: opacity 0.5s ease;
+
+    width: auto;
+    
+    height: auto;
+
+    padding: 40px;
+
+    color: var(--text-color);
+    background-color: var(--carousel-card-bg-color);
+
+    transition: background-color 0.3s;
+
+    border-radius: 12px;
+
+}
+
+.carousel-card.active {
+    display: block;
+    opacity: 1;
+
+    width: auto;
+    
+    height: auto;
+
+    padding: 40px;
+
+    color: var(--text-color);
+    background-color: var(--carousel-card-bg-color);
+
+    border: 1px solid var(--border-color);
+}
+
+.carousel-button.prev {
+    position: relative;
+    background-color: var(--btn-bg-color-alternate);
+    border-radius: 4px;
+}
+
+.carousel-button.next {
+    position: relative;
+    background-color: var(--btn-bg-color-alternate);
+    border-radius: 4px;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 70px 7%;
+
+  background-color: #222222;
+  color: white;
+}
+
+.footer h3 {
+  margin-top: 0;
+
+  font-size: 1.7rem;
+}
+
+.footer-small {
+  color: #bbbbbb;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero h1,
+  .page-hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .card-grid,
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
