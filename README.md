@@ -8,7 +8,7 @@ This repo contains the deliverables of the Responsible AI Toolkit developed for 
 # Source Code
 The website was developed using the React framework, built with Node.js, and bootstrapped by Vite. To install Node.js in your editor/environment, please visit https://nodejs.org/en/download.
 
-All source code is available here. Once downloaded, traverse to the parent folder and use `npm run dev` in your terminal to see the current build.
+All source code is available here. Once downloaded, traverse to the parent folder and use `npm install` to get the module dependencies and use `npm run dev` in your terminal to see the current build.
 The website prototype is also deployed at [link to be added].
 
 Below is the information regarding React bootstrapped with Vite.
@@ -32,6 +32,6 @@ Below is the information regarding React bootstrapped with Vite.
 Visit [link] or download the PDF from the documentation folder.
 
 # Public Surface Audit
-Reserved for KARA/Seeds of Success admins; please contact for direct access.
+Reserved for KARA/Seeds of Success admins.
 
 
