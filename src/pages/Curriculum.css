@@ -95,5 +95,30 @@
 .rat-detail-nav button:hover, .rat-detail-nav button:focus-visible { background: #dfe7dd; }
 .rat-detail-nav .next { text-align: right; margin-left: auto; }
 @media (max-width: 720px) { .rat-detail-header { grid-template-columns: 60px minmax(0, 1fr); gap: 14px; } .rat-detail-nav { flex-direction: column; } .rat-detail-nav button { max-width: none; } }
+.rat-detail-lede { font-size: 20px; line-height: 1.65; color: var(--cc-section-txt); margin: 24px 0 0; padding-bottom: 24px; border-bottom: 1px solid #dbe0d8; }
+.rat-walk-start { margin-top: 14px; background: #23382a; color: white; border: 1px solid #23382a; border-radius: 4px; padding: 12px 18px; font: 700 14px Montserrat, sans-serif; cursor: pointer; }
+.rat-walk-start:hover, .rat-walk-start:focus-visible { background: #17261c; }
+.rat-walkthrough { background: var(--cc-sidebar-color); border: 1px solid var(--cc-border-color); border-radius: 5px; padding: 24px; }
+.rat-walk-scenario { font-size: 17px; line-height: 1.65; color: var(--cc-section-txt); margin: 6px 0 18px; }
+.rat-walk-progress { display: flex; gap: 6px; margin-bottom: 22px; }
+.rat-walk-progress span { flex: 1; height: 5px; border-radius: 3px; background: #d4dcd1; }
+.rat-walk-progress span.done { background: #23382a; }
+.rat-walk-count { font: 700 12px Montserrat, sans-serif; color: var(--cc-eyebrow-color); letter-spacing: .08em; text-transform: uppercase; margin: 0 0 6px; }
+.rat-walk-step h4 { font-size: 22px; margin: 0 0 8px; }
+.rat-walk-step > p:not(.rat-walk-count) { font-size: 16px; line-height: 1.7; color: var(--cc-section-txt); margin: 0; }
+.rat-walk-prompt { position: relative; margin-top: 16px; background: white; border: 1px solid #cbd3ca; border-radius: 4px; padding: 14px 76px 14px 16px; }
+.rat-walk-prompt pre { margin: 0; white-space: pre-wrap; font: 14px/1.6 Consolas, Menlo, monospace; color: #17261c; }
+.rat-walk-prompt button { position: absolute; top: 10px; right: 10px; background: #dfe7dd; border: 0; border-radius: 4px; padding: 6px 12px; font: 700 12px Montserrat, sans-serif; color: #23382a; cursor: pointer; }
+.rat-walk-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 24px; }
+.rat-walk-controls button { background: white; border: 1px solid #cbd3ca; color: #23382a; border-radius: 4px; padding: 10px 16px; font: 600 14px Montserrat, sans-serif; cursor: pointer; }
+.rat-walk-controls button:disabled { opacity: .45; cursor: default; }
+.rat-walk-controls button.primary { background: #23382a; color: white; border-color: #23382a; }
+.rat-walk-controls button.link { margin-left: auto; background: none; border: 0; text-decoration: underline; color: var(--cc-nav-txt-color); }
+.rat-walk-detail-section { padding: 24px 0; border-bottom: 1px solid #dbe0d8; }
+.rat-walk-detail-section h4 { font-size: 20px; margin: 0 0 10px; color: var(--cc-section-txt); }
+.rat-walk-detail-section p { font-size: 17px; line-height: 1.7; color: var(--cc-section-txt); margin: 0; }
+.rat-walk-detail-section .rat-example-title { color: var(--cc-header-color); }
+.rat-walk-detail-section .rat-example-description { color: var(--cc-section-txt); }
+@media (max-width: 720px) { .rat-walkthrough { padding: 18px 16px; } .rat-walk-controls button.link { margin-left: 0; } }
 
 /* Layout buttons & category cards not given theme colors; believe final decision was sidebar layout but will confirm */
