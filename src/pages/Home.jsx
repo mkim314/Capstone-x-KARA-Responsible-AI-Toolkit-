@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { questions } from "../data/quiz";
+import { QUESTION_COUNT } from "../data/quiz";
 
 function Home() {
   return (
@@ -19,7 +19,7 @@ function Home() {
             Let’s Get Started →
           </Link>
           <p className="hero-button-note">
-            Answer {questions.length} questions to see your recommended units
+            Answer {QUESTION_COUNT} questions to see your recommended units
           </p>
         </div>
       </section>

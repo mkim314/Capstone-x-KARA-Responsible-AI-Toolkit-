@@ -42,7 +42,9 @@
 .rat-back:hover, .rat-back:focus-visible { background: #dfe7dd; }
 .rat-detail-header { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 20px; align-items: start; padding-bottom: 24px; border-bottom: 1px solid #dbe0d8; }
 .rat-detail h3 { font-size: clamp(27px, 3.4vw, 38px); line-height: 1.2; margin: 2px 0 0; }
-.rat-detail-section { padding: 24px 0; border-bottom: 1px solid #dbe0d8; }
+.rat-detail-section { padding: 24px 0; border-bottom: 1px solid #dbe0d8; scroll-margin-top: 16px; }
+.rat-detail-section:focus { outline: none; }
+.rat-detail-section:focus-visible { outline: 3px solid #222222; outline-offset: 4px; }
 .rat-detail-section h4 { font-size: 20px; margin: 0 0 10px; }
 .rat-detail-section p { font-size: 17px; line-height: 1.7; color: #3f4a42; margin: 0; }
 .rat-detail-nav { display: flex; justify-content: space-between; gap: 16px; padding-top: 24px; }

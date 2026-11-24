@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Curriculum from "./pages/Curriculum";
 import HowWeWorkWithAI from "./pages/HowWeWorkWithAI";
 import Quiz from "./pages/Quiz";
+import Progress from "./pages/Progress";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/curriculum" element={<Curriculum />} />
           <Route path="/quiz" element={<Quiz />} />
+          <Route path="/progress" element={<Progress />} />
           <Route
             path="/how-we-work-with-ai"
             element={<HowWeWorkWithAI />}

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { curriculum } from "../data/curriculum";
+import { sectionId } from "../data/knowledgeCheck";
+import KnowledgeCheck from "../components/KnowledgeCheck";
 import "./Curriculum.css";
 
 const HASH_PREFIX = "#curriculum/";
@@ -58,7 +60,12 @@ function UnitDetail({ unit, onBack, onOpen }) {
         <>
           <p className="rat-detail-lede">{unit.description}</p>
           {unit.sections.map((section) => (
-            <section className="rat-detail-section" key={section.heading}>
+            <section
+              className="rat-detail-section"
+              key={section.heading}
+              id={sectionId(unit.slug, section.heading)}
+              tabIndex={-1}
+            >
               <h4>{section.heading}</h4>
               <p>{section.body}</p>
             </section>
@@ -77,6 +84,7 @@ function UnitDetail({ unit, onBack, onOpen }) {
           </section>
         </>
       )}
+      <KnowledgeCheck key={unit.slug} unit={unit} next={next} onOpen={onOpen} />
       <nav className="rat-detail-nav" aria-label="Neighboring units">
         {prev && (
           <button type="button" onClick={() => onOpen(prev.slug)}>
