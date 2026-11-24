@@ -1,0 +1,76 @@
+/* Colors shared by the quiz, the "Test Your Knowledge" checks and the progress
+   page. Light values match the Curriculum page; dark values follow the site's
+   dark mode switch (#dark-mode-toggle in the header). Right answers are blue
+   and wrong answers red, always paired with an icon and a word. */
+
+:root {
+  --ln-bg: #fffdf8;
+  --ln-surface: #ffffff;
+  --ln-panel: #f6f3ea;
+  --ln-soft: #dfe7dd;
+  --ln-hover: #f6f3ea;
+  --ln-border: #dbe0d8;
+  --ln-border-strong: #cbd3ca;
+  --ln-border-hover: #9fb0a1;
+
+  --ln-text: #17261c;
+  --ln-heading: #0f1a14;
+  --ln-body: #3f4a42;
+  --ln-muted: #576159;
+  --ln-faint: #68716a;
+  --ln-eyebrow: #637b65;
+
+  --ln-accent: #23382a;
+  --ln-accent-hover: #17261c;
+  --ln-on-accent: #ffffff;
+  --ln-mid: #7d9a80;
+  --ln-track: #e4e9e1;
+  --ln-disabled: #aab4ab;
+
+  --ln-right: #1d4ed8;
+  --ln-right-bg: #eef3fd;
+  --ln-right-border: #d3defa;
+  --ln-wrong: #b42318;
+  --ln-wrong-bg: #fdf1ef;
+  --ln-review: #93370d;
+  --ln-review-bg: #fef6e7;
+  --ln-review-border: #f4e1bd;
+  --ln-review-bar: #b5651d;
+  --ln-on-state: #ffffff;
+}
+
+:has(#dark-mode-toggle:checked) {
+  --ln-bg: #102525;
+  --ln-surface: #0b1a1a;
+  --ln-panel: #123030;
+  --ln-soft: #0f3b3b;
+  --ln-hover: #143c3a;
+  --ln-border: #2a4a47;
+  --ln-border-strong: #3b5e5a;
+  --ln-border-hover: #5f8a83;
+
+  --ln-text: #e8f0ee;
+  --ln-heading: #e8f0ee;
+  --ln-body: #d6e0dd;
+  --ln-muted: #c3d0cc;
+  --ln-faint: #a9b8b4;
+  --ln-eyebrow: #a8c9bd;
+
+  --ln-accent: #e8f0ee;
+  --ln-accent-hover: #ffffff;
+  --ln-on-accent: #102525;
+  --ln-mid: #5f9c8c;
+  --ln-track: #1d3d3a;
+  --ln-disabled: #3a5452;
+
+  --ln-right: #8fb0ff;
+  --ln-right-bg: #16264d;
+  --ln-right-border: #2c4580;
+  --ln-wrong: #ff9a8f;
+  --ln-wrong-bg: #45191a;
+  --ln-review: #f5b971;
+  --ln-review-bg: #3d2b12;
+  --ln-review-border: #6b4a1d;
+  --ln-review-bar: #f5b971;
+  --ln-on-state: #0b1a1a;
+}

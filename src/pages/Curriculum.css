@@ -82,11 +82,13 @@
 .rat-topic.clickable { cursor: pointer; }
 .rat-topic.clickable:hover .rat-unit { background: var(--cc-unit-hover); }
 .rat-detail { max-width: 820px; }
-.rat-back { background: white; border: 1px solid #cbd3ca; color: var(--cc-nav-txt-color-alt); border-radius: 4px; padding: 10px 16px; font: 600 14px Montserrat, sans-serif; cursor: pointer; margin-bottom: 26px; }
+.rat-back { min-height: 44px; background: white; border: 1px solid #cbd3ca; color: var(--cc-nav-txt-color-alt); border-radius: 4px; padding: 10px 16px; font: 600 14px Montserrat, sans-serif; cursor: pointer; margin-bottom: 26px; }
 .rat-back:hover, .rat-back:focus-visible { background: #dfe7dd; }
 .rat-detail-header { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 20px; align-items: start; padding-bottom: 24px; border-bottom: 1px solid #dbe0d8; }
 .rat-detail h3 { font-size: clamp(27px, 3.4vw, 38px); line-height: 1.2; margin: 2px 0 0; }
-.rat-detail-section { padding: 24px 0; border-bottom: 1px solid #dbe0d8; }
+.rat-detail-section { padding: 24px 0; border-bottom: 1px solid #dbe0d8; scroll-margin-top: 16px; }
+.rat-detail-section:focus { outline: none; }
+.rat-detail-section:focus-visible { outline: 3px solid var(--cc-nav-txt-color); outline-offset: 4px; }
 .rat-detail-section h4 { font-size: 20px; margin: 0 0 10px; }
 .rat-detail-section p { font-size: 17px; line-height: 1.7; color: var(--cc-section-txt); margin: 0; }
 .rat-detail-nav { display: flex; justify-content: space-between; gap: 16px; padding-top: 24px; }
@@ -96,7 +98,7 @@
 .rat-detail-nav .next { text-align: right; margin-left: auto; }
 @media (max-width: 720px) { .rat-detail-header { grid-template-columns: 60px minmax(0, 1fr); gap: 14px; } .rat-detail-nav { flex-direction: column; } .rat-detail-nav button { max-width: none; } }
 .rat-detail-lede { font-size: 20px; line-height: 1.65; color: var(--cc-section-txt); margin: 24px 0 0; padding-bottom: 24px; border-bottom: 1px solid #dbe0d8; }
-.rat-walk-start { margin-top: 14px; background: #23382a; color: white; border: 1px solid #23382a; border-radius: 4px; padding: 12px 18px; font: 700 14px Montserrat, sans-serif; cursor: pointer; }
+.rat-walk-start { min-height: 44px; margin-top: 14px; background: #23382a; color: white; border: 1px solid #23382a; border-radius: 4px; padding: 12px 18px; font: 700 14px Montserrat, sans-serif; cursor: pointer; }
 .rat-walk-start:hover, .rat-walk-start:focus-visible { background: #17261c; }
 .rat-walkthrough { background: var(--cc-sidebar-color); border: 1px solid var(--cc-border-color); border-radius: 5px; padding: 24px; }
 .rat-walk-scenario { font-size: 17px; line-height: 1.65; color: var(--cc-section-txt); margin: 6px 0 18px; }

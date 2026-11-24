@@ -1,4 +1,6 @@
 
+// `tags` connect units to quiz answers (see src/data/quiz.js and the Intro
+// Quiz Specs doc, section 4). A unit can have several tags.
 export const curriculum = [
   {
     title: "Start Here",
@@ -8,6 +10,7 @@ export const curriculum = [
         unit: "B7",
         title: "Responsible Use Basics",
         slug: "B7",
+        tags: [],  // Everyone gets this unit, so the quiz doesn't score it.
         description:
           "One screen, three points. When to use AI vs. route to a human, verified-content-only philosophy, care with sensitive or vulnerable contexts.",
         sections: [
@@ -71,6 +74,7 @@ export const curriculum = [
         unit: "B2",
         title: "Turn Your Documents into a Quick App",
         slug: "B2",
+        tags: ["sharing-info", "teaching"],
         description:
           "The thirty-minute pattern. A knowledge base you already maintain becomes a small interactive app you can send anyone, instead of a twenty-page document.",
         sections: [
@@ -124,6 +128,7 @@ export const curriculum = [
         unit: "B3",
         title: "Meetings and Transcripts",
         slug: "B3",
+        tags: ["meetings"],
         description:
           "One process family, four parts. Create assignment emails in your voice, decisions notes across transcripts, transcript-as-spec builds, and the shared working-session format.",
         sections: [
@@ -183,6 +188,7 @@ export const curriculum = [
         unit: "B6",
         title: "Teach Claude Your Own Tone",
         slug: "B6",
+        tags: ["writing"],
         description:
           "Use writing you have already invested effort in - emails you spent time on, written work you submitted - as tone-training examples for your Claude account so outputs sound like you.",
         sections: [
@@ -242,6 +248,7 @@ export const curriculum = [
         unit: "B1",
         title: "Get Claude to Ask Questions at the Right Time",
         slug: "B1",
+        tags: ["prompting", "accuracy"],
         description:
           "One process with three parts. For real deliverables, require all clarifying questions up front. For quick tasks, one question maximum. No lazy confirmations.",
         sections: [
@@ -295,6 +302,7 @@ export const curriculum = [
         unit: "B4",
         title: "Hand Off Work with a Complete Prompt",
         slug: "B4",
+        tags: ["delegation"],
         description:
           "Writing one self-contained prompt another person pastes into a fresh chat and executes without re-explanation. Full context, tasks, voice notes, human-confirmation checkpoints, and model + settings named up front.",
         sections: [
@@ -337,6 +345,7 @@ export const curriculum = [
         unit: "B5",
         title: "Say What Done Looks Like",
         slug: "B5",
+        tags: ["done", "accuracy"],
         description:
           "State a testable completion criterion inside the request so 'done' is checkable.",
         sections: [
@@ -384,6 +393,7 @@ export const curriculum = [
         unit: "B8",
         title: "Pick the Right Model and Settings",
         slug: "B8",
+        tags: ["tool-choice"],
         description:
           "Claude has a variety of different models. It is important to select the right one for each task. (last checked 11/23/26)",
         sections: [
@@ -449,6 +459,7 @@ export const curriculum = [
         unit: "B9",
         title: "Spot Bias and Missing Voices",
         slug: "B9",
+        tags: ["equity", "teaching"],
         description:
           "Check Claude’s output for stereotypes and for an imagined reader who does not match the target audience.",
          sections: [
