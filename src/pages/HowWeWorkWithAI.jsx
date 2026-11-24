@@ -175,7 +175,9 @@ export default function HowWeWorkWithAI() {
           </p>
 
           <span className="button" aria-disabled="true">
-            White Paper — Coming Soon
+            <a href="../../documentation/KARA x Seeds of Success_ Responsible AI White Paper (Draft).pdf" target="_blank" rel="noopener noreferrer">
+                White Paper
+            </a>
           </span>
         </div>
       </section>
