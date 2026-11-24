@@ -37,10 +37,63 @@ function Topic({ topic, onOpen }) {
   );
 }
 
+function Walkthrough({ unit, onClose }) {
+  const { scenario, steps } = unit.walkthrough;
+  const [step, setStep] = useState(0);
+  const [copied, setCopied] = useState(false);
+  const current = steps[step];
+  const last = step === steps.length - 1;
+
+  function go(next) {
+    setStep(next);
+    setCopied(false);
+  }
+
+  async function copyPrompt() {
+    try {
+      await navigator.clipboard.writeText(current.prompt);
+      setCopied(true);
+    } catch {
+      setCopied(false);
+    }
+  }
+
+  return (
+    <section className="rat-walkthrough" aria-label={`Practical example for ${unit.title}`}>
+      <p className="rat-eyebrow">Practical example</p>
+      <p className="rat-walk-scenario">{scenario}</p>
+      <div className="rat-walk-progress" role="progressbar" aria-valuemin={1} aria-valuemax={steps.length} aria-valuenow={step + 1} aria-label="Example progress">
+        {steps.map((s, i) => <span key={s.title} className={i <= step ? "done" : undefined} />)}
+      </div>
+      <div className="rat-walk-step" aria-live="polite">
+        <p className="rat-walk-count">Step {step + 1} of {steps.length}</p>
+        <h4>{current.title}</h4>
+        <p>{current.body}</p>
+        {current.prompt && (
+          <div className="rat-walk-prompt">
+            <pre>{current.prompt}</pre>
+            <button type="button" onClick={copyPrompt}>{copied ? "Copied" : "Copy"}</button>
+          </div>
+        )}
+      </div>
+      <div className="rat-walk-controls">
+        <button type="button" onClick={() => go(step - 1)} disabled={step === 0}>← Previous step</button>
+        <button type="button" className="primary" onClick={last ? onClose : () => go(step + 1)}>
+          {last ? "Finish example" : "Next step →"}
+        </button>
+        <button type="button" className="link" onClick={onClose}>Close example</button>
+      </div>
+    </section>
+  );
+}
+
+
 function UnitDetail({ unit, onBack, onOpen }) {
   const index = allUnits.findIndex((u) => u.slug === unit.slug);
   const prev = allUnits[index - 1];
   const next = allUnits[index + 1];
+
+  const [walking, setWalking] = useState(false);
 
   return (
     <div className="rat-detail" aria-live="polite">
@@ -76,6 +129,23 @@ function UnitDetail({ unit, onBack, onOpen }) {
             <span className="rat-lesson-status">Lesson page coming soon</span>
           </section>
         </>
+      )}
+      {unit.walkthrough && (
+        <section className="rat-walk-detail-section">
+          {walking ? (
+            <Walkthrough unit={unit} onClose={() => setWalking(false)} />
+          ) : (
+            <>
+              <h4 className="rat-example-title">Practical example</h4>
+              <p className="rat-example-description">
+                See this unit applied step by step.
+              </p>
+              <button type="button" className="rat-walk-start" onClick={() => setWalking(true)}>
+                Walk me through an example
+              </button>
+            </>
+          )}
+        </section>
       )}
       <nav className="rat-detail-nav" aria-label="Neighboring units">
         {prev && (
@@ -153,7 +223,7 @@ export default function Curriculum() {
         </p>
 
         {unit ? (
-          <UnitDetail unit={unit} onBack={closeUnit} onOpen={openUnit} />
+          <UnitDetail key={unit.slug} unit={unit} onBack={closeUnit} onOpen={openUnit} />
         ) : (
           <>
           {/*
